@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 @property(nonatomic,strong)UIImageView * showImageView;
+@property(assign)int p;
 @end
 
 @implementation ViewController
@@ -17,11 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.showImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0,0,350,350)];
+   self.p = 0;
+    
+    self.showImageView = [[UIImageView alloc]initWithFrame:CGRectMake(90,90,150,150)];
     
     [self.view addSubview:self.showImageView];
     
-    self.showImageView.layer.cornerRadius = 175;
+    self.showImageView.layer.cornerRadius = 75;
     
     self.showImageView.layer.masksToBounds = YES;
     
@@ -52,11 +55,35 @@
 
 -(void)ggg
 {
+    if (self.p == 0) {
+
+    CFTimeInterval pausedTime = [ self.showImageView.layer convertTime:CACurrentMediaTime() fromLayer:nil];
     
+    // 让CALayer的时间停止走动
+    self.showImageView.layer.speed = 0.0;
+    // 让CALayer的时间停留在pausedTime这个时刻
+   self.showImageView.layer.timeOffset = pausedTime;
+        
+       self.p = 1;
     
-    self.showImageView.layer.speed = 0;
-    
-    
+    }else{
+        
+        CFTimeInterval pausedTime = self.showImageView.layer.timeOffset;
+        // 1. 让CALayer的时间继续行走
+       self.showImageView.layer.speed = 1.0;
+        // 2. 取消上次记录的停留时刻
+       self.showImageView.layer.timeOffset = 0.0;
+        // 3. 取消上次设置的时间
+       self.showImageView.layer.beginTime = 0.0;
+        // 4. 计算暂停的时间(这里也可以用CACurrentMediaTime()-pausedTime)
+        CFTimeInterval timeSincePause = [self.showImageView.layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+        // 5. 设置相对于父坐标系的开始时间(往后退timeSincePause)
+        self.showImageView.layer.beginTime = timeSincePause;
+        
+        self.p = 0;
+        
+    }
+
 }
 
 
