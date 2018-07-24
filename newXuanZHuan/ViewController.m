@@ -30,7 +30,7 @@
     
     [self scroolerViewSunZhuan];
     
-    self.showThreeButton = [[UIButton alloc]initWithFrame:CGRectMake(0,650,40,50)];//在这里面去展示我们想要展示的动画
+    self.showThreeButton = [[UIButton alloc]initWithFrame:CGRectMake(0,550,40,50)];//在这里面去展示我们想要展示的动画
     
     [self.view addSubview:self.showThreeButton];
     
@@ -63,8 +63,7 @@
     
     [self.showImageView.layer addAnimation:rotation forKey:@"rotation"];
     
-    
-    UIButton * showOnebutton = [[UIButton alloc]initWithFrame:CGRectMake(120, 520,40,40)];
+    UIButton * showOnebutton = [[UIButton alloc]initWithFrame:CGRectMake(120, 550,40,40)];
     
     [self.view addSubview:showOnebutton];
     
