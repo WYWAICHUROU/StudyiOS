@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "twoViewController.h"
+#import "FourViewController.h"
 @interface ViewController ()
 @property(nonatomic,strong)UIImageView * showImageView;
 @property(assign)int p;
 @property(nonatomic,strong)UIScrollView * showScroolerView;
 @property(nonatomic,strong)UIButton * showThreeButton;
+@property(nonatomic,strong)UIButton * oneAgainButton;
 @end
 
 @implementation ViewController
@@ -20,9 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.oneAgainButton = [[UIButton alloc]initWithFrame:CGRectMake(50,500,50,50)];
+    [self.view addSubview:self.oneAgainButton];
+    self.oneAgainButton.backgroundColor =[UIColor purpleColor];
+    
+    [self.oneAgainButton addTarget:self action:@selector(showViewAgain) forControlEvents:UIControlEventTouchUpInside];
+    
     [self scroolerViewSunZhuan];
     
-    self.showThreeButton = [[UIButton alloc]initWithFrame:CGRectMake(0,550,40,50)];
+    self.showThreeButton = [[UIButton alloc]initWithFrame:CGRectMake(0,650,40,50)];//在这里面去展示我们想要展示的动画
     
     [self.view addSubview:self.showThreeButton];
     
@@ -60,6 +68,10 @@
     
     [self.view addSubview:showOnebutton];
     
+    [showOnebutton setTitle:@"点击" forState:UIControlStateNormal];
+    
+    [showOnebutton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     [showOnebutton addTarget:self action:@selector(ggg) forControlEvents:UIControlEventAllEvents];
     
     showOnebutton.backgroundColor = [UIColor redColor];
@@ -68,7 +80,16 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
+-(void)showViewAgain
+{
+    
+    FourViewController * twoView = [[FourViewController alloc]init];
+    
+    
+    [self presentViewController:twoView animated:YES completion:nil];
+    
+    
+}
 -(void)wwwww
 {
 
