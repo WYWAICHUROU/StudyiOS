@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		70837E782106D832003BDA24 /* readme in Resources */ = {isa = PBXBuildFile; fileRef = 70837E772106D832003BDA24 /* readme */; };
+		70C75A852108271400D48F6B /* SIXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C75A842108271400D48F6B /* SIXViewController.m */; };
 		70C9A8F52105C91600F8A363 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C9A8F42105C91600F8A363 /* AppDelegate.m */; };
 		70C9A8F82105C91600F8A363 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C9A8F72105C91600F8A363 /* ViewController.m */; };
 		70C9A8FB2105C91600F8A363 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C9A8F92105C91600F8A363 /* Main.storyboard */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		70837E772106D832003BDA24 /* readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
+		70C75A832108271400D48F6B /* SIXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIXViewController.h; sourceTree = "<group>"; };
+		70C75A842108271400D48F6B /* SIXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIXViewController.m; sourceTree = "<group>"; };
 		70C9A8F02105C91600F8A363 /* newXuanZHuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newXuanZHuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C9A8F32105C91600F8A363 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70C9A8F42105C91600F8A363 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				70C9A9282105D5FB00F8A363 /* twoViewController.m */,
 				70C9A92A2106D14200F8A363 /* FourViewController.h */,
 				70C9A92B2106D14200F8A363 /* FourViewController.m */,
+				70C75A832108271400D48F6B /* SIXViewController.h */,
+				70C75A842108271400D48F6B /* SIXViewController.m */,
 			);
 			path = newXuanZHuan;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70C9A8F82105C91600F8A363 /* ViewController.m in Sources */,
+				70C75A852108271400D48F6B /* SIXViewController.m in Sources */,
 				70C9A9032105C91600F8A363 /* main.m in Sources */,
 				70C9A92C2106D14200F8A363 /* FourViewController.m in Sources */,
 				70C9A8F52105C91600F8A363 /* AppDelegate.m in Sources */,

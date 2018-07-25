@@ -9,18 +9,28 @@
 #import "ViewController.h"
 #import "twoViewController.h"
 #import "FourViewController.h"
-@interface ViewController ()
+#import "SIXViewController.h"
+@interface ViewController ()<sendDataWith>
 @property(nonatomic,strong)UIImageView * showImageView;
 @property(assign)int p;
 @property(nonatomic,strong)UIScrollView * showScroolerView;
 @property(nonatomic,strong)UIButton * showThreeButton;
 @property(nonatomic,strong)UIButton * oneAgainButton;
+@property(nonatomic,strong)UIButton * oneceAgainShio;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.oneceAgainShio = [[UIButton alloc]initWithFrame:CGRectMake(50,0,50,50)];
+    
+    [self.view addSubview:self.oneceAgainShio];
+    
+    self.oneceAgainShio.backgroundColor = [UIColor yellowColor];
+    
+    [self.oneceAgainShio addTarget:self action:@selector(showOnceThign) forControlEvents:UIControlEventTouchUpInside];
     
     self.oneAgainButton = [[UIButton alloc]initWithFrame:CGRectMake(50,500,50,50)];
     [self.view addSubview:self.oneAgainButton];
@@ -38,8 +48,6 @@
     self.showThreeButton.backgroundColor = [UIColor blackColor];
     
     [self.showThreeButton addTarget:self action:@selector(wwwww) forControlEvents:UIControlEventTouchUpInside];
-    
-    
     
    self.p = 0;
     
@@ -79,6 +87,27 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+-(void)showOnceThign
+{
+   SIXViewController * sixView = [[SIXViewController alloc]init];
+
+//    sixView.delegate = self;
+    
+    sixView.showBlock = ^{
+        
+        NSLog(@"111111111111111");
+    };
+
+    [self presentViewController:sixView animated:YES completion:nil];
+
+}
+
+-(void)nextGoToOneceThign
+{
+    
+    NSLog(@"111111111111111");
+    
+}
 -(void)showViewAgain
 {
     
